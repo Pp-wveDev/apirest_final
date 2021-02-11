@@ -59,7 +59,7 @@ router.get('/:user', async (req, res) => {
                     resp.push(mensajes[i]);
             }
         }
-        mensajes.sort(c_sort).reverse();
+        resp.sort(c_sort).reverse();
 
         res.json(resp);
     } catch (err) {
@@ -82,9 +82,9 @@ router.get('/:user/cabeceras', async (req, res) => {
                 resp.push(mensajes[i]);
             }
         }
-        mensajes.sort(c_sort).reverse();
+        resp.sort(c_sort).reverse();
 
-        res.json(mensajes);
+        res.json(resp);
     } catch (err) {
         res.send(err);
     }
@@ -118,6 +118,40 @@ router.delete('/id/:mId', async (req, res) => {
         let mensaje = await Message.findByIdAndDelete(mId);
 
         res.json(mensaje);
+    } catch (err) {
+        res.send(err);
+    }
+});
+
+function fusionar(l1, l2) {
+    var l = []
+
+    for(let i = 0; i <l1.length; ++i) {
+        l.push(l1[i]);
+    }
+
+    for(let i = 0; i <l2.length; ++i) {
+        l.push(l2[i]);
+    }
+
+    return l;
+}
+
+// Mensajes de una conversacion entre dos usuarios
+router.get('/conversacion/:user1/:user2', async (req, res) => {
+    try {
+        const user1 = req.params.user1;
+        const user2 = req.params.user2;
+
+        const mensajes1 = await Message.find({"cabecera.de": user1, "cabecera.para": user2});
+        const mensajes2 = await Message.find({"cabecera.de": user2, "cabecera.para": user1});
+        console.log(mensajes2);
+        
+        var resp = [];
+        resp = fusionar(mensajes1, mensajes2);
+        resp.sort(c_sort);
+
+        res.json(resp);
     } catch (err) {
         res.send(err);
     }
