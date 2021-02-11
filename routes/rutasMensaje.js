@@ -24,8 +24,11 @@ router.post('/', async (req, res) => {
                 de: req.body.de,
                 para: req.body.para,
                 asunto: req.body.asunto,
-                contenido: req.body.contenido,
                 stamp: new Date()
+            },
+            cuerpo: {
+                contenido: req.body.contenido,
+                adjunto: req.body.adjunto
             }
         });
 

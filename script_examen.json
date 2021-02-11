@@ -1,0 +1,62 @@
+[
+    {
+        "cabecera": {
+            "de": "fran@fran.com",
+            "para": "juan@juan.com",
+            "asunto": "Fran",
+            "stamp": "2021-02-09 01:00:00"
+        },
+        "cuerpo": {
+            "adjunto": "https://i.imgur.com/Efub3VS.jpg",
+            "contenido": "Turn out the light and rest your head on me tonight"
+        }
+    },
+    {
+        "cabecera": {
+            "de": "juan@juan.com",
+            "para": "fran@fran.com",
+            "asunto": "Re: Fran",
+            "stamp": "2021-02-09 02:00:00"
+        },
+        "cuerpo": {
+            "adjunto": "https://i.imgur.com/f19Kjy0.jpg",
+            "contenido": "I am extremely humble as I make your clothes tumble"
+        }
+    },
+    {
+        "cabecera": {
+            "de": "fran@fran.com",
+            "para": "juan@juan.com",
+            "asunto": "Re: Re: Fran",
+            "stamp": "2021-02-09 03:00:00"
+        },
+        "cuerpo": {
+            "adjunto": "https://i.imgur.com/7RlJP8L.jpg",
+            "contenido": "Open me up and take a peek, inside you will find a frozen treat"
+        }
+    },
+    {
+        "cabecera": {
+            "de": "fran@fran.com",
+            "para": "lola@lola.com",
+            "asunto": "Hola Lola",
+            "stamp": "2021-02-09 04:00:00"
+        },
+        "cuerpo": {
+            "adjunto": null,
+            "contenido": "From my reflection, you will see your complexion"
+        }
+    },
+    {
+        "cabecera": {
+            "de": "lola@lola.com",
+            "para": "pepe@pepe.com",
+            "asunto": "(Sin asunto)",
+            "stamp": "2021-02-09 05:00:00"
+        },
+        "cuerpo": {
+            "adjunto": "https://i.imgur.com/oHCY083.jpg",
+            "contenido": "Bye"
+        }
+    }
+]
