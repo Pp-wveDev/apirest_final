@@ -168,6 +168,7 @@ router.get('/noRespondidos/:user', async (req, res) => {
         var resp = [];
         var usuariosRegistrados = [];
         
+        // Solo guardamos el primer mensaje de cada usuario
         for(var i = 0; i < mensajes.length; ++i) {
             if(!usuariosRegistrados.includes(JSON.stringify(mensajes[i].cabecera.para))) {
                 resp.push(mensajes[i]);
@@ -180,6 +181,28 @@ router.get('/noRespondidos/:user', async (req, res) => {
         console.log(err);
         res.send(err);
     }
-})
+});
+
+router.get('/contactos/:user', async (req, res) => {
+    try {
+        const user = req.params.user;
+        var usuariosRegistrados = [];
+        var usuarios = [];
+
+        const mensajes = await Message.find({"cabecera.de": user});
+
+        for(var i = 0; i< mensajes.length; ++i) {
+            if(!usuariosRegistrados.includes(JSON.stringify(mensajes[i].cabecera.para))) {
+                usuariosRegistrados.push(JSON.stringify(mensajes[i].cabecera.para));
+                usuarios.push(mensajes[i].cabecera.para);
+            }
+        }
+
+        res.json(usuarios);
+    } catch (err) {
+        console.log(err);
+        res.send(err);
+    }
+});
 
 module.exports = router;
