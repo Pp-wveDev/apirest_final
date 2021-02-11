@@ -32,8 +32,6 @@ router.post('/', async (req, res) => {
             }
         });
 
-        mensaje.cabecera.idd = mensaje._id;
-
         const response = await mensaje.save();
         res.json(response);
     } catch (err) {
@@ -113,7 +111,6 @@ router.patch('/id/:mId', async (req, res) => {
 router.delete('/id/:mId', async (req, res) => {
     try {
         const mId = req.params.mId;
-        const nuevoAsunto = req.body.asunto;
 
         // Obtenemos el mensaje
         let mensaje = await Message.findByIdAndDelete(mId);
