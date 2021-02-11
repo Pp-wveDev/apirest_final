@@ -157,4 +157,29 @@ router.get('/conversacion/:user1/:user2', async (req, res) => {
     }
 });
 
+router.get('/noRespondidos/:user', async (req, res) => {
+    try {
+        const user = req.params.user;
+
+        // Mensajes más recientes primero
+        const mensajes = await Message.find({"cabecera.de": user});
+        mensajes.sort(c_sort);
+        
+        var resp = [];
+        var usuariosRegistrados = [];
+        
+        for(var i = 0; i < mensajes.length; ++i) {
+            if(!usuariosRegistrados.includes(JSON.stringify(mensajes[i].cabecera.para))) {
+                resp.push(mensajes[i]);
+                usuariosRegistrados.push(JSON.stringify(mensajes[i].cabecera.para));
+            }
+        }
+
+        res.json(resp);
+    } catch (err) {
+        console.log(err);
+        res.send(err);
+    }
+})
+
 module.exports = router;
