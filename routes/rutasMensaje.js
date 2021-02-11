@@ -110,6 +110,7 @@ router.patch('/id/:mId', async (req, res) => {
 
 // Borramos mensaje
 router.delete('/id/:mId', async (req, res) => {
+    console.log("Borramos mensaje");
     try {
         const mId = req.params.mId;
 
