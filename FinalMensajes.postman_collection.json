@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "a8b47ff0-455d-4d8c-bcf5-734606b2832d",
+		"name": "FinalMensajes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "nuevoMensaje",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"de\": \"pepe@p.es\",\r\n    \"para\": \"pepe@p.es\",\r\n    \"asunto\": \"Mensaje de prueba\",\r\n    \"contenido\": \"As I said\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get mensajes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by correo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages/pepe@pepe.com",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"pepe@pepe.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cabeceras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages/pepe@pepe.com/cabeceras",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"pepe@pepe.com",
+						"cabeceras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages/id/60259cb520f2e100042c30e5",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"id",
+						"60259cb520f2e100042c30e5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar asunto",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"asunto\": \"Mensahe modificado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages/id/60259d7220f2e100042c30e6",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"id",
+						"60259d7220f2e100042c30e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Conversacion entre dos usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages/conversacion/fran@fran.com/juan@juan.com",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"conversacion",
+						"fran@fran.com",
+						"juan@juan.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mjs. no respondidos de un usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages/noRespondidos/fran@fran.com",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"noRespondidos",
+						"fran@fran.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contactos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://josediaz-apirest-def.herokuapp.com/messages/contactos/fran@fran.com",
+					"protocol": "https",
+					"host": [
+						"josediaz-apirest-def",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"contactos",
+						"fran@fran.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
