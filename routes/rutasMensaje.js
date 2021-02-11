@@ -55,12 +55,13 @@ router.get('/:user', async (req, res) => {
         for (let i = 0; i < mensajes.length; ++i) {
             if (user == mensajes[i].cabecera.de ||
                 user == mensajes[i].cabecera.para) {
-                resp.push(mensajes[i]);
+                    console.log(mensajes[i].de + " " + mensajes[i].para);
+                    resp.push(mensajes[i]);
             }
         }
         mensajes.sort(c_sort).reverse();
 
-        res.json(mensajes);
+        res.json(resp);
     } catch (err) {
         console.error(err);
         res.send(err);
