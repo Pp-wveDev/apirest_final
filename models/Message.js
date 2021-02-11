@@ -3,13 +3,12 @@ const mongoose = require('mongoose');
 const MessageSchema = new mongoose.Schema({
     cabecera:
     {
-        idd: String,
         de: String,
         para: String,
         asunto: String,
         stamp: Date
     },
-    headers:
+    cuerpo:
     {
         contenido: String,
         adjunto: String
