@@ -19,12 +19,12 @@ Las rutas son las siguientes:
 
 - GET **/messages**: todos los mensajes.
 - POST **/messages**: crea un nuevo mensaje.
-- GET **/messages/_user_**: obtiene mensajes enviados o recibidos por user.
-- GET **/messages/_user_/cabeceras**: obtiene la cabecera de los mensajes recibidos o enviados por user.
-- PATCH **/messages/id/_mId_**: modifica el asunto del mensaje cuya id coincida con mId.
-- DELETE **/messages/id/_mId_**: borra el mensaje cuya id coincida con mId.
-- GET **/messages/conversacion/_user1_/_user2_**: devuelve las conversaciones entre user1 u user2.
-- GET **/messages/noRespondidos/_user_/**: devuelve los mensajes que user no ha respondido.
-- GET **/messages/contactos/_user_**: devuelve todos los contactos con los que user haya hablado
+- GET **/messages/_:user_**: obtiene mensajes enviados o recibidos por user.
+- GET **/messages/_:user_/cabeceras**: obtiene la cabecera de los mensajes recibidos o enviados por user.
+- PATCH **/messages/id/_:mId_**: modifica el asunto del mensaje cuya id coincida con mId.
+- DELETE **/messages/id/_:mId_**: borra el mensaje cuya id coincida con mId.
+- GET **/messages/conversacion/_:user1_/_:user2_**: devuelve las conversaciones entre user1 u user2.
+- GET **/messages/noRespondidos/_:user_/**: devuelve los mensajes que user no ha respondido.
+- GET **/messages/contactos/_:user_**: devuelve todos los contactos con los que user haya hablado
 
 NOTA: al escribir esto me he dado cuenta de las últimas rutas estarían mejor al revés (especificar la variable user antes de especificar la acción). Para no complicar más las cosas lo voy a dejar como está.
